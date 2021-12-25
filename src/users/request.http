@@ -4,7 +4,7 @@ POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-    "email" : "probando1@gmail.com",
+    "email" : "probando2@gmail.com",
     "password": "123456",
     "name": "Nombre",
     "surname": "Apellido"
@@ -17,4 +17,31 @@ Content-Type: application/json
 {
     "email": "probando1@gmail.com",
     "password": "123456"
+}
+
+### Get the current logged in user
+GET http://localhost:3000/auth/me
+
+### Signout user
+POST http://localhost:3000/auth/signout
+Content-Type: application/json
+
+{
+  
+}
+
+### Make an admin
+PATCH http://localhost:3000/auth/make-admin
+Content-Type: application/json
+
+{
+    "id": 2 
+}
+
+### remove an admin
+PATCH http://localhost:3000/auth/remove-admin
+Content-Type: application/json
+
+{
+     "id": 2
 }
