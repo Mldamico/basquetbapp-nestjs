@@ -18,13 +18,13 @@ export class User {
     @Column()
     password: string;
 
-    @Column()
+    @Column({ default: true })
     isActive: boolean
 
-    @Column()
+    @Column({ default: true })
     isAdmin: boolean
 
-    @Column()
+    @Column({ default: true })
     isAssistant: boolean
 
 }

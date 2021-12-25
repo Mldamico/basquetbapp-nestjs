@@ -1,0 +1,20 @@
+
+### Create an user
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+    "email" : "probando1@gmail.com",
+    "password": "123456",
+    "name": "Nombre",
+    "surname": "Apellido"
+}
+
+### Log in with an existing user
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+    "email": "probando1@gmail.com",
+    "password": "123456"
+}
