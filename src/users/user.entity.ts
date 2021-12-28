@@ -18,6 +18,12 @@ export class User {
     @Column()
     password: string;
 
+    @Column({ nullable: true })
+    number: number;
+
+    @Column({ nullable: true })
+    height: number;
+
     @Column({ default: true })
     isActive: boolean
 
@@ -26,5 +32,6 @@ export class User {
 
     @Column({ default: true })
     isAssistant: boolean
+
 
 }

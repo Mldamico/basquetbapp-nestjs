@@ -13,6 +13,6 @@ export class Play {
     @Column()
     url: string;
 
-    @Column()
+    @Column({ default: true })
     isActive: boolean
 }

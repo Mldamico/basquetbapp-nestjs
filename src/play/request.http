@@ -1,0 +1,27 @@
+
+### Create a play
+POST http://localhost:3000/play/create
+Content-Type: application/json
+
+{
+    "name": "Jugada 1",
+    "url": "http://prueba"
+}
+
+
+### Get all actives plays
+GET http://localhost:3000/play/
+
+### Activate play
+PATCH http://localhost:3000/play/activate/1
+
+{
+
+}
+
+### disable play
+PATCH http://localhost:3000/play/disable/1
+
+{
+    
+}
