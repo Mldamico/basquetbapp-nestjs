@@ -31,8 +31,6 @@ export class UsersService {
 
     async removeAdmin(id: number) {
         const user = await this.findOne(id)
-        console.log(id)
-        console.log(user)
         if (!user) throw new NotFoundException('User not found')
         user.isAdmin = false
         this.repo.save(user)

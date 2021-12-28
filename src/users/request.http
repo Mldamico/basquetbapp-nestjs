@@ -35,7 +35,7 @@ PATCH http://localhost:3000/auth/make-admin
 Content-Type: application/json
 
 {
-    "id": 2 
+    "id": 1
 }
 
 ### remove an admin
@@ -43,5 +43,5 @@ PATCH http://localhost:3000/auth/remove-admin
 Content-Type: application/json
 
 {
-     "id": 2
+     "id": 1
 }
