@@ -25,3 +25,11 @@ PATCH http://localhost:3000/play/disable/1
 {
     
 }
+
+### Update Play
+PATCH http://localhost:3000/play/update/1
+Content-Type: application/json
+
+{
+    "name": "Cambio"
+}

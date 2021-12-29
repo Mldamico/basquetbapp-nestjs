@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Param, Patch, Post, UseGuards } from '@nestjs/common';
 import { AdminGuard } from 'src/guards/admin.guard';
 import { CreatePlayDto } from './dto/create-play.dto';
+import { UpdatePlayDto } from './dto/update-play.dto';
 import { PlayService } from './play.service';
 
 @Controller('play')
@@ -30,5 +31,11 @@ export class PlayController {
     @Patch('/disable/:id')
     disablePlay(@Param('id') id: string) {
         return this.playService.disablePlay(+id)
+    }
+
+    @UseGuards(AdminGuard)
+    @Patch('/update/:id')
+    updatePlay(@Param('id') id: string, @Body() body: UpdatePlayDto) {
+        return this.playService.updatePlay(+id, body);
     }
 }

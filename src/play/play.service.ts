@@ -17,19 +17,33 @@ export class PlayService {
         return plays;
     }
 
+    findOne(id: number) {
+        if (!id) {
+            return null;
+        }
+
+        return this.repo.findOne(id)
+    }
+
     async activatePlay(id: number) {
-        if (!id) return null;
-        const play = await this.repo.findOne(id)
+        const play = await this.findOne(id)
         if (!play) throw new NotFoundException('play not found');
         play.isActive = true
         return this.repo.save(play)
     }
 
     async disablePlay(id: number) {
-        if (!id) return null;
-        const play = await this.repo.findOne(id)
+        const play = await this.findOne(id)
         if (!play) throw new NotFoundException('play not found');
         play.isActive = false
         return this.repo.save(play)
     }
+
+    async updatePlay(id: number, attrs: Partial<Play>) {
+        const play = await this.findOne(id);
+        if (!play) throw new NotFoundException('play not found');
+        Object.assign(play, attrs)
+        return this.repo.save(play)
+    }
+
 }
