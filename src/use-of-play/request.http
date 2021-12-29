@@ -1,0 +1,13 @@
+### Create useOfPlay
+POST http://localhost:3000/use-of-play/create
+Content-Type: application/json
+
+{
+    "points": 2,
+    "play": 1,
+    "base": 4,
+    "escolta": 5,
+    "alero": 6,
+    "alaPivot":7,
+    "pivot": 8
+}

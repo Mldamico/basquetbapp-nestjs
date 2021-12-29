@@ -13,26 +13,26 @@ export class UseOfPlay {
     @Column()
     points: number
 
-    @ManyToOne(() => Play)
-    play: Play;
+    @Column()
+    play: number;
 
     /* 
         Los nombres de las posiciones son muy distintos en ingles, por lo tanto opte ponerlas en español 
         para no armar confusion.
     */
 
-    @ManyToOne(() => User)
-    base: User
+    @Column()
+    base: number
 
-    @ManyToOne(() => User)
-    escolta: User
+    @Column()
+    escolta: number
 
-    @ManyToOne(() => User)
-    alero: User
+    @Column()
+    alero: number
 
-    @ManyToOne(() => User)
-    alaPivot: User
+    @Column()
+    alaPivot: number
 
-    @ManyToOne(() => User)
-    pivot: User
+    @Column()
+    pivot: number
 }

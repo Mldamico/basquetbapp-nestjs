@@ -27,10 +27,10 @@ export class User {
     @Column({ default: true })
     isActive: boolean
 
-    @Column({ default: true })
+    @Column({ default: false })
     isAdmin: boolean
 
-    @Column({ default: true })
+    @Column({ default: false })
     isAssistant: boolean
 
 
