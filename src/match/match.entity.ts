@@ -1,5 +1,5 @@
 import { Events } from "src/events/events.entity";
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 
 @Entity()
@@ -8,18 +8,18 @@ export class Match {
     @PrimaryGeneratedColumn()
     id: number
 
-    @Column()
+    @CreateDateColumn()
     date: Date
 
     @Column()
     opponent: string;
 
-    @Column()
+    @Column({ nullable: true })
     finalScore: number;
 
-    @Column()
+    @Column({ nullable: true })
     opponentFinalScore: number;
 
-    @OneToMany(() => Events, (events) => events.match)
+    @OneToMany(() => Events, (events) => events.match, { nullable: true })
     events: Events[]
 }

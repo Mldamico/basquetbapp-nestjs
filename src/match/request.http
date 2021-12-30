@@ -1,0 +1,7 @@
+###Create Match
+POST http://localhost:3000/match/create
+Content-Type: application/json
+
+{
+    "opponent": "Velez"
+}
