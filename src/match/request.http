@@ -5,3 +5,13 @@ Content-Type: application/json
 {
     "opponent": "Velez"
 }
+
+
+### End a match
+PATCH http://localhost:3000/match/end/1
+Content-Type: application/json
+
+{
+    "finalScore": 30,
+    "opponentFinalScore": 29
+}

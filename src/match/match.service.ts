@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Match } from './match.entity';
@@ -9,5 +9,14 @@ export class MatchService {
     createMatch(opponent: string) {
         const match = this.repo.create({ opponent })
         return this.repo.save(match)
+    }
+
+    async endMatch(id: number, finalScore: number, opponentFinalScore: number) {
+        const match = await this.repo.findOne(id)
+        if (!match) throw new NotFoundException("match not found")
+        match.finalScore = finalScore
+        match.opponentFinalScore = opponentFinalScore
+        return this.repo.save(match)
+
     }
 }
